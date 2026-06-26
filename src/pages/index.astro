@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HeroSection from '@/components/sections/HeroSection.astro';
+import NexusFocusSection from '@/components/sections/NexusFocusSection.astro';
+import ServicesSection from '@/components/sections/ServicesSection.astro';
+import AboutSection from '@/components/sections/AboutSection.astro';
+import PortfolioSection from '@/components/sections/PortfolioSection.astro';
+import ProcessSection from '@/components/sections/ProcessSection.astro';
+import ContactSection from '@/components/sections/ContactSection.astro';
+---
+
+<BaseLayout>
+  <HeroSection />
+  <NexusFocusSection />
+  <ServicesSection />
+  <AboutSection />
+  <PortfolioSection compact={true} />
+  <ProcessSection />
+  <ContactSection />
+</BaseLayout>

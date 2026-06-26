@@ -1,0 +1,59 @@
+---
+import { company, navigation, legalNavigation } from '@/config/company';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/10">
+  <div class="container-page grid gap-10 py-12 md:grid-cols-[1.2fr_0.7fr_0.7fr_0.8fr]">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-brand-500 font-bold text-white">
+          LL
+        </span>
+        <div>
+          <strong class="block text-lg text-white">{company.legalName}</strong>
+          <small class="text-slate-400">{company.shortTagline}</small>
+        </div>
+      </div>
+
+      <p class="mt-5 max-w-xl text-sm leading-7 text-slate-400">{company.description}</p>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold text-white">Navigation</h2>
+      <div class="mt-4 grid gap-3">
+        {navigation.map((item) => (
+          <a class="text-sm text-slate-400 transition hover:text-white" href={item.href}>
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold text-white">Legal</h2>
+      <div class="mt-4 grid gap-3">
+        {legalNavigation.map((item) => (
+          <a class="text-sm text-slate-400 transition hover:text-white" href={item.href}>
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold text-white">Contact</h2>
+      <div class="mt-4 grid gap-3 text-sm text-slate-400">
+        <a class="transition hover:text-white" href={`mailto:${company.email}`}>{company.email}</a>
+        <span>{company.address}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-6">
+    <div class="container-page flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <span>© {year} {company.legalName}. All rights reserved.</span>
+      <span>Professional software, web, and digital solution studio.</span>
+    </div>
+  </div>
+</footer>

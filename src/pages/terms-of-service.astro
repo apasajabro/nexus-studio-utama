@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { company } from '@/config/company';
+---
+
+<BaseLayout title="Terms of Service">
+  <section class="section-padding">
+    <div class="container-page">
+      <div class="mx-auto max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-300">Terms</p>
+        <h1 class="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">Terms of Service</h1>
+
+        <div class="mt-8 space-y-6 text-sm leading-8 text-slate-400">
+          <p>
+            This website provides general information about {company.legalName}, including company profile, service overview, and contact information.
+          </p>
+          <p>
+            Any project discussion, pricing, timeline, or technical scope must be confirmed through direct communication and written agreement.
+          </p>
+          <p>
+            Website content may be updated from time to time to improve clarity, accuracy, and service presentation.
+          </p>
+          <p>
+            For business inquiries, please contact <a class="text-brand-200 hover:text-white" href={`mailto:${company.email}`}>{company.email}</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

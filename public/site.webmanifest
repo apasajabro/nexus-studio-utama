@@ -1,0 +1,16 @@
+{
+  "name": "PT Nexus Studio Utama",
+  "short_name": "Nexus Studio",
+  "description": "Professional software, web, and digital solution studio.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

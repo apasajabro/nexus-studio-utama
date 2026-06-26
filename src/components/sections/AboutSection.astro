@@ -1,0 +1,50 @@
+---
+import { company, values } from '@/config/company';
+---
+
+<section class="section-padding">
+  <div class="container-page">
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">About</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl text-balance">
+          A digital solution studio connecting ideas, systems, and execution.
+        </h2>
+        <p class="mt-6 text-base leading-8 text-cyan-50/65">
+          {company.legalName} works with businesses that need professional websites, custom software support, and digital product execution that is structured, practical, and maintainable.
+        </p>
+      </div>
+
+      <div class="card-glass p-8">
+        <h3 class="text-2xl font-bold text-white">Our Approach</h3>
+        <p class="mt-5 leading-8 text-cyan-50/65">
+          We combine design clarity, structured development, and business-focused implementation to help companies build stronger digital foundations.
+        </p>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl bg-white/[0.06] p-5">
+            <strong class="text-3xl text-white">{company.founded}</strong>
+            <p class="mt-2 text-sm text-cyan-50/65">Founded</p>
+          </div>
+          <div class="rounded-2xl bg-white/[0.06] p-5">
+            <strong class="text-3xl text-white">6</strong>
+            <p class="mt-2 text-sm text-cyan-50/65">Core Services</p>
+          </div>
+          <div class="rounded-2xl bg-white/[0.06] p-5">
+            <strong class="text-3xl text-white">Web</strong>
+            <p class="mt-2 text-sm text-cyan-50/65">Primary Focus</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-3">
+      {values.map((item) => (
+        <article class="card-glass p-7">
+          <h3 class="text-xl font-bold text-white">{item.title}</h3>
+          <p class="mt-4 text-sm leading-7 text-cyan-50/65">{item.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

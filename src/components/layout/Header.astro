@@ -1,0 +1,125 @@
+---
+import { company, navigation } from '@/config/company';
+---
+
+<header class="sticky top-0 z-50 border-b border-white/15 bg-sky-950/70 backdrop-blur-xl">
+  <div class="container-page flex h-20 items-center justify-between">
+    <a href="/" class="flex items-center gap-3" aria-label={`${company.legalName} Home`}>
+      <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-300 to-accent-500 font-bold text-slate-950 shadow-lg shadow-brand-400/25">
+        NS
+      </span>
+      <span class="leading-tight">
+        <strong class="block text-sm font-semibold tracking-wide text-white">{company.name}</strong>
+        <small class="text-xs text-cyan-100/75">{company.shortTagline}</small>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+      {navigation.map((item) => (
+        <a class="text-sm font-medium text-cyan-50/80 transition hover:text-white" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden md:block">
+      <a
+        href={`mailto:${company.email}`}
+        class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-100"
+      >
+        Contact Us
+      </a>
+    </div>
+
+    <button
+      id="mobileMenuButton"
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.08] text-white transition hover:bg-white/15 md:hidden"
+      aria-label="Open navigation menu"
+      aria-controls="mobileMenu"
+      aria-expanded="false"
+    >
+      <svg
+        id="mobileMenuOpenIcon"
+        aria-hidden="true"
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <path d="M4 7h16" />
+        <path d="M4 12h16" />
+        <path d="M4 17h16" />
+      </svg>
+
+      <svg
+        id="mobileMenuCloseIcon"
+        aria-hidden="true"
+        class="hidden h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <path d="M6 6l12 12" />
+        <path d="M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="hidden border-t border-white/15 bg-sky-950/95 md:hidden">
+    <nav class="container-page grid gap-2 py-5" aria-label="Mobile navigation">
+      {navigation.map((item) => (
+        <a
+          class="rounded-2xl px-4 py-3 text-sm font-medium text-cyan-50/80 transition hover:bg-white/[0.08] hover:text-white"
+          href={item.href}
+        >
+          {item.label}
+        </a>
+      ))}
+
+      <a
+        href={`mailto:${company.email}`}
+        class="mt-2 rounded-2xl bg-gradient-to-r from-brand-300 to-accent-400 px-4 py-3 text-center text-sm font-bold text-slate-950 transition hover:opacity-90"
+      >
+        Contact Us
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('mobileMenuButton');
+  const menu = document.getElementById('mobileMenu');
+  const openIcon = document.getElementById('mobileMenuOpenIcon');
+  const closeIcon = document.getElementById('mobileMenuCloseIcon');
+
+  const setMenuState = (isOpen: boolean) => {
+    if (!button || !menu || !openIcon || !closeIcon) return;
+
+    button.setAttribute('aria-expanded', String(isOpen));
+    button.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+
+    menu.classList.toggle('hidden', !isOpen);
+    openIcon.classList.toggle('hidden', isOpen);
+    closeIcon.classList.toggle('hidden', !isOpen);
+  };
+
+  button?.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    setMenuState(!isOpen);
+  });
+
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuState(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setMenuState(false);
+    }
+  });
+</script>
