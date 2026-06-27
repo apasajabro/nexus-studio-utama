@@ -1,0 +1,29 @@
+---
+const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+
+const cleanGoogleSiteVerification =
+  typeof googleSiteVerification === 'string' ? googleSiteVerification.trim() : '';
+
+const cleanGaMeasurementId =
+  typeof gaMeasurementId === 'string' ? gaMeasurementId.trim() : '';
+
+const hasGoogleSiteVerification = cleanGoogleSiteVerification.length > 0;
+const hasGoogleAnalytics = cleanGaMeasurementId.length > 0;
+---
+
+{hasGoogleSiteVerification && (
+  <meta name="google-site-verification" content={cleanGoogleSiteVerification} />
+)}
+
+{hasGoogleAnalytics && (
+  <>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${cleanGaMeasurementId}`}></script>
+    <script is:inline define:vars={{ gaMeasurementId: cleanGaMeasurementId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaMeasurementId);
+    </script>
+  </>
+)}

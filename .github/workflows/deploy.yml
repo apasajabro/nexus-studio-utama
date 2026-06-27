@@ -18,6 +18,8 @@ concurrency:
 
 env:
   PUBLIC_SITE_URL: https://nexustudio.my.id
+  PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+  PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
 
 jobs:
   build:
