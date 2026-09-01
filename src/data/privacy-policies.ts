@@ -27,6 +27,34 @@ export type AppPrivacyPolicy = {
 
 export const privacyPolicies: AppPrivacyPolicy[] = [
   {
+    slug: 'nexus-notes-memo-and-ideas',
+    appName: 'Nexus Notes: Memo & Ideas',
+    developerName: 'Nexus Studio Utama',
+    companyWebsite: 'https://nexustudio.my.id',
+    contactEmail: 'nexusstudioutama@proton.me',
+    effectiveDate: '2026-09-01',
+    lastUpdated: '2026-09-01',
+    country: 'Indonesia',
+    shortDescription:
+      'Privacy Policy for Nexus Notes: Memo & Ideas, a local-first productivity app for notes and ideas.',
+    dataCollectionSummary:
+      'Notes and attachments may be stored locally on your device to provide the features you request.',
+    features: {
+      localStorage: true,
+      ads: false,
+      analytics: false,
+      crashReporting: false,
+      inAppPurchases: false,
+      subscriptions: false,
+      notifications: false,
+      location: false,
+      camera: true,
+      mediaFiles: true,
+      accountSystem: false,
+      cloudSync: false
+    }
+  },
+  {
     slug: 'general-mobile-app-privacy-policy',
     appName: 'General Mobile Application Privacy Policy',
     developerName: 'PT Nexus Studio Utama',

@@ -1,0 +1,66 @@
+---
+import type { AppPrivacyPolicy } from '@/data/privacy-policies';
+
+interface Props {
+  policy: AppPrivacyPolicy;
+}
+
+const { policy } = Astro.props;
+---
+
+<div class="privacy-document mt-8">
+  <section>
+    <h2>1. Scope</h2>
+    <p>This Privacy Policy explains how {policy.appName} and {policy.developerName} handle information when you use the app.</p>
+  </section>
+
+  <section>
+    <h2>2. Information stored on your device</h2>
+    <p>Notes, titles, note content, categories, tags, pins, locks, sketches, recordings, images, videos, files, and app preferences may be stored locally on your device when you create or attach them. This information is used only to provide the features you request.</p>
+  </section>
+
+  <section>
+    <h2>3. Information we collect</h2>
+    <p>{policy.developerName} does not operate an account system for this app and does not knowingly collect your note content, attachments, contacts, location, advertising identifier, or browsing history through {policy.appName}. The current release does not include advertising or analytics services.</p>
+  </section>
+
+  <section>
+    <h2>4. Permissions and device features</h2>
+    <p>The app may request microphone access when you choose to record audio. It may use the system camera or media/file picker when you choose to add a photo, video, audio file, or document. Access is initiated by your action, is used for the selected feature, and can be denied. If access is denied, the related feature may not work, while other note features remain available.</p>
+  </section>
+
+  <section>
+    <h2>5. Sharing and third parties</h2>
+    <p>The developer does not sell, rent, or share your note content. If you use the app&apos;s Share action, Android or iOS sends the content you choose to the destination app or service selected by you. Opening the website or rating the app takes you to an external service governed by its own privacy policy. {policy.developerName} does not control those third parties.</p>
+  </section>
+
+  <section>
+    <h2>6. Internet and offline use</h2>
+    <p>Core note creation and local browsing are designed to work offline. Internet access may be used only for optional external actions such as opening the {policy.developerName} website, rating the app, or using a platform share flow. The current release does not upload your local notes to a {policy.developerName} server.</p>
+  </section>
+
+  <section>
+    <h2>7. Security</h2>
+    <p>We use local application storage and limit access to the app&apos;s own data area where the operating system allows. No method of storage is guaranteed to be completely secure. Do not store information in the app unless you accept the risks of device loss, unauthorized device access, operating-system backups, or other events outside the developer&apos;s control.</p>
+  </section>
+
+  <section>
+    <h2>8. Retention and deletion</h2>
+    <p>Your local content remains on your device until you delete it in the app, clear the app&apos;s data, or uninstall the app. Because the current release has no developer-operated account or cloud database, {policy.developerName} does not hold a server copy that can be deleted on your behalf. Device backups and external copies created by you are controlled by their respective providers.</p>
+  </section>
+
+  <section>
+    <h2>9. Children</h2>
+    <p>{policy.appName} is a general-purpose productivity app and is not directed to children under the age required by applicable law. We do not knowingly collect children&apos;s personal information. If you believe a child has provided personal information to the developer, contact us so we can review the request.</p>
+  </section>
+
+  <section>
+    <h2>10. Changes to this policy</h2>
+    <p>This policy may be updated when the app&apos;s data practices or legal requirements change. The latest effective date will be shown in the app and on this public policy page. Material changes will be communicated through an appropriate in-app or store update where practical.</p>
+  </section>
+
+  <section>
+    <h2>11. Contact</h2>
+    <p>Privacy questions or requests can be sent to <a href={`mailto:${policy.contactEmail}`}>{policy.contactEmail}</a>.</p>
+  </section>
+</div>
