@@ -30,8 +30,10 @@ const activeFeatures = [
   policy.features.subscriptions && 'Subscriptions',
   policy.features.notifications && 'Notifications',
   policy.features.location && 'Location Access',
+  policy.features.microphone && 'Microphone Access',
   policy.features.camera && 'Camera Access',
   policy.features.mediaFiles && 'Media / File Access',
+  policy.features.deviceAuthentication && 'Device Authentication',
   policy.features.accountSystem && 'Account System',
   policy.features.cloudSync && 'Cloud Sync'
 ].filter(Boolean);
@@ -96,6 +98,13 @@ const activeFeatures = [
             </p>
 
             <div class="mt-5 space-y-4 text-sm">
+              {policy.appPackage && (
+                <div>
+                  <p class="text-slate-400">App Package</p>
+                  <p class="mt-1 break-all font-bold text-white">{policy.appPackage}</p>
+                </div>
+              )}
+
               <div>
                 <p class="text-slate-400">Website</p>
                 <a href={policy.companyWebsite} class="mt-1 block break-all font-bold text-white hover:text-cyan-100">
@@ -109,6 +118,15 @@ const activeFeatures = [
                   {policy.contactEmail}
                 </a>
               </div>
+
+              {policy.publicPolicyUrl && (
+                <div>
+                  <p class="text-slate-400">Public Policy URL</p>
+                  <a href={policy.publicPolicyUrl} class="mt-1 block break-all font-bold text-white hover:text-cyan-100">
+                    {policy.publicPolicyUrl}
+                  </a>
+                </div>
+              )}
             </div>
 
             <div class="mt-6 border-t border-white/10 pt-5">

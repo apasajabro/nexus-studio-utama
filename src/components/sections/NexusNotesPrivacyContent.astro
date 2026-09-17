@@ -10,57 +10,214 @@ const { policy } = Astro.props;
 
 <div class="privacy-document mt-8">
   <section>
-    <h2>1. Scope</h2>
-    <p>This Privacy Policy explains how {policy.appName} and {policy.developerName} handle information when you use the app.</p>
+    <h2>1. Who this policy covers</h2>
+    <p>
+      This Privacy Policy applies to {policy.appName}. {policy.developerName} is the app developer
+      and the party responsible for the practices described here. This notice covers the current app
+      release and direct privacy or support communications with us. It does not replace the privacy
+      terms of your device platform or an external app or service you choose to use.
+    </p>
   </section>
 
   <section>
     <h2>2. Information stored on your device</h2>
-    <p>Notes, titles, note content, categories, tags, pins, locks, sketches, recordings, images, videos, files, and app preferences may be stored locally on your device when you create or attach them. This information is used only to provide the features you request.</p>
+    <p>The app stores information you create or select locally in its private storage, including:</p>
+    <ul>
+      <li>note titles, note text, and creation and update dates;</li>
+      <li>pinned and locked status, categories, and tags;</li>
+      <li>sketches and audio recordings;</li>
+      <li>copies of images, videos, audio, PDFs, and other files you attach; and</li>
+      <li>settings such as language, theme, accent color, text size, and contrast.</li>
+    </ul>
+    <p>
+      The app uses this data on your device to provide, organize, display, search, authenticate access
+      to, and delete the features you request.
+    </p>
   </section>
 
   <section>
-    <h2>3. Information we collect</h2>
-    <p>{policy.developerName} does not operate an account system for this app and does not knowingly collect your note content, attachments, contacts, location, advertising identifier, or browsing history through {policy.appName}. The current release does not include advertising or analytics services.</p>
+    <h2>3. Data sent to the developer</h2>
+    <p>
+      The current release has no Nexus Notes account, developer-operated cloud sync, advertising SDK,
+      or analytics SDK. It does not automatically send your notes, attachments, contacts, precise or
+      approximate location, advertising identifier, or browsing history to {policy.developerName}.
+    </p>
+    <p>
+      Google Play, Apple, the operating system, or the device manufacturer may separately process
+      installation, purchase, security, usage, or diagnostic information under their own terms. Store
+      consoles may provide {policy.developerName} with limited or aggregated technical reports, such as
+      crash or performance information. Nexus Notes does not add your note content to those reports.
+    </p>
   </section>
 
   <section>
     <h2>4. Permissions and device features</h2>
-    <p>The app may request microphone access when you choose to record audio. It may use the system camera or media/file picker when you choose to add a photo, video, audio file, or document. Access is initiated by your action, is used for the selected feature, and can be denied. If access is denied, the related feature may not work, while other note features remain available.</p>
+    <p>Nexus Notes uses device features only for the action you select:</p>
+    <ul>
+      <li><strong>Microphone:</strong> requested when you start an audio recording.</li>
+      <li><strong>Camera:</strong> the system camera is opened when you choose to capture a photo or video.</li>
+      <li><strong>Media and files:</strong> the system media or file picker is opened when you choose an existing attachment. On supported Android versions, access is limited to the item you select.</li>
+      <li><strong>Device authentication:</strong> a device credential or biometric check is requested when you open a note marked Locked. Biometric matching is handled by the operating system. The app receives an authentication result and does not receive or store your biometric template.</li>
+    </ul>
+    <p>
+      You may deny or later revoke access in system settings. The related feature may then be unavailable,
+      while other note features continue to work.
+    </p>
   </section>
 
   <section>
-    <h2>5. Sharing and third parties</h2>
-    <p>The developer does not sell, rent, or share your note content. If you use the app&apos;s Share action, Android or iOS sends the content you choose to the destination app or service selected by you. Opening the website or rating the app takes you to an external service governed by its own privacy policy. {policy.developerName} does not control those third parties.</p>
+    <h2>5. Sharing, external apps, and third parties</h2>
+    <p>
+      {policy.developerName} does not sell or rent your note content. Data leaves the app only when you
+      initiate an external action or when a platform independently processes its own data.
+    </p>
+    <ul>
+      <li>The Share action sends the note text you choose through the system share sheet to the app or service you select.</li>
+      <li>Opening some attachment types may provide a temporary or app-private copy to the external viewer you select.</li>
+      <li>Website, privacy-policy, email, and app-store links open external services.</li>
+    </ul>
+    <p>
+      Those recipients process data under their own privacy policies. Their copies are outside our control.
+      Review the destination before sharing sensitive content.
+    </p>
   </section>
 
   <section>
-    <h2>6. Internet and offline use</h2>
-    <p>Core note creation and local browsing are designed to work offline. Internet access may be used only for optional external actions such as opening the {policy.developerName} website, rating the app, or using a platform share flow. The current release does not upload your local notes to a {policy.developerName} server.</p>
+    <h2>6. Internet and offline operation</h2>
+    <p>
+      Core note creation, organization, search, and viewing work locally. The current Android release
+      does not request the Internet permission and does not upload local notes to a {policy.developerName} server.
+    </p>
+    <p>
+      Optional actions can hand off a link, email, or selected content to a browser, email app, store,
+      sharing destination, or other external app. That external app or service may use the internet independently.
+    </p>
   </section>
 
   <section>
-    <h2>7. Security</h2>
-    <p>We use local application storage and limit access to the app&apos;s own data area where the operating system allows. No method of storage is guaranteed to be completely secure. Do not store information in the app unless you accept the risks of device loss, unauthorized device access, operating-system backups, or other events outside the developer&apos;s control.</p>
+    <h2>7. Security and the Locked feature</h2>
+    <p>App data is kept in the operating system&apos;s app-private storage where supported. The current Android release also:</p>
+    <ul>
+      <li>disables Android cloud backup and device-to-device transfer for app data;</li>
+      <li>blocks cleartext network traffic; and</li>
+      <li>prevents screenshots or screen recording in non-debug builds.</li>
+    </ul>
+    <p>
+      These measures reduce risk but do not guarantee security. <strong>Locked is an access-control feature;
+      note text and attachment files are not encrypted by Nexus Notes itself.</strong> Device encryption may
+      provide separate protection. Anyone who can unlock or compromise your device, a rooted or jailbroken
+      device, malicious software, operating-system defects, or external copies may expose data. Do not use
+      Nexus Notes as an encrypted vault.
+    </p>
   </section>
 
   <section>
-    <h2>8. Retention and deletion</h2>
-    <p>Your local content remains on your device until you delete it in the app, clear the app&apos;s data, or uninstall the app. Because the current release has no developer-operated account or cloud database, {policy.developerName} does not hold a server copy that can be deleted on your behalf. Device backups and external copies created by you are controlled by their respective providers.</p>
+    <h2>8. Backups and copies</h2>
+    <p>
+      Nexus Notes does not provide developer-operated backup or sync. Android app-data cloud backup and
+      device transfer are disabled for the current Android release. Other platforms, device tools, or
+      user-selected services may still create backups or copies under their own settings and policies.
+    </p>
+    <p>
+      Sharing, exporting, viewing in another app, or keeping the original selected file can also create
+      copies outside Nexus Notes. {policy.developerName} cannot retrieve, manage, or delete those external copies.
+    </p>
   </section>
 
   <section>
-    <h2>9. Children</h2>
-    <p>{policy.appName} is a general-purpose productivity app and is not directed to children under the age required by applicable law. We do not knowingly collect children&apos;s personal information. If you believe a child has provided personal information to the developer, contact us so we can review the request.</p>
+    <h2>9. Retention and deletion</h2>
+    <p>Local data remains until you delete it, clear the app&apos;s storage, or uninstall the app.</p>
+    <p>
+      Deleting a note or attachment removes its Nexus Notes database record and the app-private attachment
+      copy associated with it. It does not delete the original photo, video, audio, or document from which
+      the attachment was selected. Temporary and cached files may remain until the app or operating system
+      clears them. Storage hardware, file-system journaling, backups, and external recipients may prevent
+      immediate or forensic erasure.
+    </p>
+    <p>
+      Because there is no developer-operated account or note database, {policy.developerName} cannot remotely
+      access, recover, or delete your local notes.
+    </p>
   </section>
 
   <section>
-    <h2>10. Changes to this policy</h2>
-    <p>This policy may be updated when the app&apos;s data practices or legal requirements change. The latest effective date will be shown in the app and on this public policy page. Material changes will be communicated through an appropriate in-app or store update where practical.</p>
+    <h2>10. Emails and support requests</h2>
+    <p>
+      If you email us, we receive the information you choose to provide, such as your email address, name,
+      message, and attachments. We use it to respond, troubleshoot, protect the service, and keep records
+      when reasonably necessary.
+    </p>
+    <p>
+      Support correspondence is handled through our email provider and retained only as long as needed for
+      those purposes, dispute prevention, security, or legal obligations, then deleted when reasonably practicable.
+      Do not send note content or sensitive attachments unless needed for your request.
+    </p>
   </section>
 
   <section>
-    <h2>11. Contact</h2>
-    <p>Privacy questions or requests can be sent to <a href={`mailto:${policy.contactEmail}`}>{policy.contactEmail}</a>.</p>
+    <h2>11. Children</h2>
+    <p>
+      Nexus Notes is a general-purpose productivity app and is not designed or marketed specifically for
+      children. We do not knowingly collect children&apos;s personal information through the app. If a parent
+      or guardian believes a child sent personal information directly to us, contact us so we can review
+      and delete it where required.
+    </p>
+    <p>The target-audience declaration in the app store must remain consistent with this statement.</p>
+  </section>
+
+  <section>
+    <h2>12. Your choices and requests</h2>
+    <p>You can:</p>
+    <ul>
+      <li>create, edit, and delete local content in the app;</li>
+      <li>revoke permissions in device settings;</li>
+      <li>delete all local app data in system settings; or</li>
+      <li>uninstall the app.</li>
+    </ul>
+    <p>
+      For personal information contained in direct correspondence with us, you may request access, correction,
+      or deletion by emailing <a href={`mailto:${policy.contactEmail}`}>{policy.contactEmail}</a>, subject to
+      identity verification and applicable legal exceptions. Your local notes are not available to us, so a
+      privacy request sent to us cannot recover or modify them.
+    </p>
+  </section>
+
+  <section>
+    <h2>13. Processing locations</h2>
+    <p>
+      We do not transfer local note data to a developer-operated server. If you contact us or choose an external
+      platform, that provider may process information in countries other than your own according to its
+      infrastructure, safeguards, and privacy terms.
+    </p>
+  </section>
+
+  <section>
+    <h2>14. Changes to this policy</h2>
+    <p>
+      We may update this policy when app features, data practices, providers, or legal requirements change.
+      We will update the effective date and publish the revised policy in the app or at the public policy URL.
+      Where reasonably required, material changes will also be communicated through an app or store update.
+      Continued use after an update is subject to the revised notice where permitted by law.
+    </p>
+  </section>
+
+  <section>
+    <h2>15. Contact</h2>
+    <p>
+      Privacy questions or requests can be sent to <a href={`mailto:${policy.contactEmail}`}>{policy.contactEmail}</a>.
+    </p>
+    <p>
+      Please identify {policy.appName} and describe your request. Do not include sensitive note content unless
+      it is necessary for the request.
+    </p>
+  </section>
+
+  <section>
+    <h2>Current-release transparency summary</h2>
+    <p>
+      Local notes and attachments are not automatically transmitted to {policy.developerName}. User-initiated
+      sharing, external apps, support email, and independent platform processing are described above. The app&apos;s
+      store Data safety declaration must always match the exact shipped build and its SDKs.
+    </p>
   </section>
 </div>

@@ -2,7 +2,9 @@ export type AppPrivacyPolicy = {
   slug: string;
   appName: string;
   developerName: string;
+  appPackage?: string;
   companyWebsite: string;
+  publicPolicyUrl?: string;
   contactEmail: string;
   effectiveDate: string;
   lastUpdated: string;
@@ -18,8 +20,10 @@ export type AppPrivacyPolicy = {
     subscriptions: boolean;
     notifications: boolean;
     location: boolean;
+    microphone: boolean;
     camera: boolean;
     mediaFiles: boolean;
+    deviceAuthentication: boolean;
     accountSystem: boolean;
     cloudSync: boolean;
   };
@@ -30,10 +34,12 @@ export const privacyPolicies: AppPrivacyPolicy[] = [
     slug: 'nexus-notes-memo-and-ideas',
     appName: 'Nexus Notes: Memo & Ideas',
     developerName: 'Nexus Studio Utama',
+    appPackage: 'com.nexusstudioutama.nexusnotes',
     companyWebsite: 'https://nexustudio.my.id',
+    publicPolicyUrl: 'https://nexustudio.my.id/privacy-policy/nexus-notes-memo-and-ideas/',
     contactEmail: 'nexusstudioutama@proton.me',
-    effectiveDate: '2026-09-01',
-    lastUpdated: '2026-09-01',
+    effectiveDate: '2026-09-18',
+    lastUpdated: '2026-09-18',
     country: 'Indonesia',
     shortDescription:
       'Privacy Policy for Nexus Notes: Memo & Ideas, a local-first productivity app for notes and ideas.',
@@ -48,8 +54,10 @@ export const privacyPolicies: AppPrivacyPolicy[] = [
       subscriptions: false,
       notifications: false,
       location: false,
+      microphone: true,
       camera: true,
       mediaFiles: true,
+      deviceAuthentication: true,
       accountSystem: false,
       cloudSync: false
     }
@@ -76,8 +84,10 @@ export const privacyPolicies: AppPrivacyPolicy[] = [
       subscriptions: true,
       notifications: true,
       location: false,
+      microphone: false,
       camera: false,
       mediaFiles: false,
+      deviceAuthentication: false,
       accountSystem: false,
       cloudSync: false
     }
