@@ -14,7 +14,7 @@ export const company = {
   shortTagline: 'Software • Website • Digital Solution',
   description:
     'PT Nexus Studio Utama is a technology studio focused on building professional websites, business software, and digital solutions that help companies improve their digital presence and operational efficiency.',
-  email: 'nexusstudioutama@proton.me',
+  email: 'nexusmonetize@gmail.com',
   phone: '',
   whatsapp: '',
   address: 'Indonesia',
